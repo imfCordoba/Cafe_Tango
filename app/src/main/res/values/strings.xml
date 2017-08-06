@@ -5,7 +5,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_phases">PhasesActivity</string>
-    <string name="speech_prompt">Puto el que habla&#8230;</string>
+    <string name="speech_prompt">Mencione la enfermedad&#8230;</string>
     <string name="speech_not_supported">Sorry! Your device doesn\'t support speech input</string>
     <string name="loremIpsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec venenatis pellentesque mauris et tincidunt.

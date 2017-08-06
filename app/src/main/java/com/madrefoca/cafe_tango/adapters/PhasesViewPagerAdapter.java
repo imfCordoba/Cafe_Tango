@@ -5,9 +5,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.example.fernando.searchlistview.fragments.PhasesTab1;
-import com.example.fernando.searchlistview.fragments.PhasesTab2;
-import com.example.fernando.searchlistview.fragments.PhasesTab3;
+import com.madrefoca.cafe_tango.fragments.PhasesTab1;
+import com.madrefoca.cafe_tango.fragments.PhasesTab2;
+import com.madrefoca.cafe_tango.fragments.PhasesTab3;
 /**
  * Created by Fernando on 8/6/2017.
  */

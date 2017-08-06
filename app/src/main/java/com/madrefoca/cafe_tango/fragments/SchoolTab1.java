@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.madrefoca.cafe_tango.R;
+import com.madrefoca.cafe_tango.activities.PhasesActivity;
 
 /**
  * A simple {@link Fragment} subclass.
