@@ -1,6 +1,55 @@
 <resources>
-    <string name="app_name">Cafe_Tango</string>
+    <string name="app_name">Cafe Tango</string>
+    <string name="action_settings">Settings</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_phases">PhasesActivity</string>
+    <string name="speech_prompt">Puto el que habla&#8230;</string>
+    <string name="speech_not_supported">Sorry! Your device doesn\'t support speech input</string>
+    <string name="loremIpsum">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec venenatis pellentesque mauris et tincidunt.
+        Sed vel nisi ut dui tempus scelerisque. Curabitur ullamcorper dolor eget nunc posuere viverra. Aliquam in enim posuere,
+        faucibus leo vel, pharetra felis. Praesent congue enim at justo tincidunt, vitae imperdiet velit mattis. Praesent ac
+        ante cursus, lobortis nulla sed, congue dui. Donec egestas urna at tincidunt placerat. Duis libero sapien, volutpat
+        vitae dictum ut, scelerisque ut lorem. Aliquam pretium, nibh ac elementum sodales, velit nisi euismod augue, eu semper
+        quam leo id massa. Quisque dui nulla, condimentum et diam eget, cursus luctus arcu.
+
+        In fermentum, leo ac dictum rhoncus, ante lorem commodo nibh, in venenatis nisl tortor id enim. Curabitur vel dictum
+        tellus. Ut dignissim magna efficitur, porta est ac, posuere ipsum. Etiam et ultrices sem, vitae varius augue. Etiam
+        interdum ipsum non felis vehicula ultrices. Sed venenatis aliquam justo, finibus pharetra velit euismod tincidunt.
+        Nam quis ultricies purus. Nunc ullamcorper nisl elit. Praesent nec cursus orci, id tempor libero. Quisque finibus
+        lectus elit, eget aliquam odio aliquam id. Integer interdum volutpat ex, quis pharetra ex fringilla at. Cras iaculis
+        ipsum at neque facilisis molestie. Ut quis mauris pulvinar, tincidunt augue eget, facilisis dui. Vivamus malesuada,
+        odio vitae viverra sagittis, risus magna vulputate nisl, vel mollis leo purus non urna. Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit.
+
+        Sed augue metus, laoreet et nunc a, varius pulvinar odio. Pellentesque mattis cursus nisi consequat pulvinar. Curabitur
+        ultricies, justo non molestie pulvinar, tortor nulla tristique leo, non rutrum neque lectus sit amet augue. Sed varius
+        nisi quam, eget condimentum urna viverra ut. Etiam tristique ex eget mattis vestibulum. Ut egestas eget odio ut gravida.
+        Maecenas et velit massa. Duis eget bibendum nulla.
+
+        Aenean ac ex cursus, pretium lorem eu, egestas quam. Donec feugiat, ante a bibendum interdum, elit ligula pellentesque
+        felis, quis semper leo dolor id ante. Phasellus ante ante, congue id eleifend ac, porttitor eget arcu. Cras ut velit id
+        justo ultricies dapibus. Mauris sapien augue, ullamcorper in erat eget, eleifend congue mi. Nulla eget bibendum lacus,
+        a luctus eros. Aenean dignissim enim varius, efficitur lorem ut, commodo leo.
+
+        Maecenas varius mi at lorem pharetra tempor. Donec aliquet sit amet tortor sit amet volutpat. Proin sagittis non massa
+        eu condimentum. Pellentesque quis neque luctus elit tempus rhoncus eu quis est. Vivamus vel arcu molestie, vestibulum
+        sapien a, pharetra massa. Cras in viverra velit. Mauris sit amet condimentum ante.
+
+        Sed augue metus, laoreet et nunc a, varius pulvinar odio. Pellentesque mattis cursus nisi consequat pulvinar. Curabitur
+        ultricies, justo non molestie pulvinar, tortor nulla tristique leo, non rutrum neque lectus sit amet augue. Sed varius
+        nisi quam, eget condimentum urna viverra ut. Etiam tristique ex eget mattis vestibulum. Ut egestas eget odio ut gravida.
+        Maecenas et velit massa. Duis eget bibendum nulla.
+
+        Aenean ac ex cursus, pretium lorem eu, egestas quam. Donec feugiat, ante a bibendum interdum, elit ligula pellentesque
+        felis, quis semper leo dolor id ante. Phasellus ante ante, congue id eleifend ac, porttitor eget arcu. Cras ut velit id
+        justo ultricies dapibus. Mauris sapien augue, ullamcorper in erat eget, eleifend congue mi. Nulla eget bibendum lacus,
+        a luctus eros. Aenean dignissim enim varius, efficitur lorem ut, commodo leo.
+
+        Maecenas varius mi at lorem pharetra tempor. Donec aliquet sit amet tortor sit amet volutpat. Proin sagittis non massa
+        eu condimentum. Pellentesque quis neque luctus elit tempus rhoncus eu quis est. Vivamus vel arcu molestie, vestibulum
+        sapien a, pharetra massa. Cras in viverra velit. Mauris sit amet condimentum ante.
+    </string>
 </resources>

@@ -6,8 +6,11 @@
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/treatmentText"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_marginTop="110dp"
+        android:scrollbars="vertical"
+        android:text="@string/loremIpsum"/>
 
 </FrameLayout>
