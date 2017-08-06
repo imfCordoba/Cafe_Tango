@@ -1,4 +1,4 @@
-package adapters;
+package com.madrefoca.cafe_tango.adapters;
 
 
 import android.support.v4.app.Fragment;
