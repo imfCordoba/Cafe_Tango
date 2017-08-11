@@ -9,7 +9,7 @@ import com.madrefoca.cafe_tango.helpers.IndicationsHelper;
 public class ExerciseIndication extends Indication {
 
     private String name;
-    private double frequency;
+    private long frequency;
 
     public static final String COLON = ": ";
     public static final String WEEKLY = " semanales.";
@@ -20,7 +20,7 @@ public class ExerciseIndication extends Indication {
 
         finalIndication.append(name);
         finalIndication.append(COLON);
-        finalIndication.append(IndicationsHelper.formatTerm(frequency));
+        //finalIndication.append(IndicationsHelper.formatTerm(frequency));
         finalIndication.append(WEEKLY);
 
         return finalIndication.toString();
@@ -30,7 +30,7 @@ public class ExerciseIndication extends Indication {
         this.name = name;
     }
 
-    public void setFrequency(double frequency) {
+    public void setFrequency(long frequency) {
         this.frequency = frequency;
     }
 }
