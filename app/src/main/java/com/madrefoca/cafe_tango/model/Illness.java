@@ -5,9 +5,9 @@ package com.madrefoca.cafe_tango.model;
  */
 
 public class Illness {
-    int id;
-    String name;
-    String description;
+    private int id;
+    private String name;
+    private String description;
 
     public Illness(){
 

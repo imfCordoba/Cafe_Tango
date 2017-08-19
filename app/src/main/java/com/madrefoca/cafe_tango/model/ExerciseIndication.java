@@ -16,14 +16,9 @@ public class ExerciseIndication extends Indication {
 
     @Override
     public String indicate() {
-        StringBuilder finalIndication = new StringBuilder();
+        //TODO revisar si queremos indicar ejericio de manera semanal u otra
 
-        finalIndication.append(name);
-        finalIndication.append(COLON);
-        //finalIndication.append(IndicationsHelper.formatTerm(frequency));
-        finalIndication.append(WEEKLY);
-
-        return finalIndication.toString();
+        return name + COLON + IndicationsHelper.formatTerm(frequency) + WEEKLY;
     }
 
     public void setName(String name) {
