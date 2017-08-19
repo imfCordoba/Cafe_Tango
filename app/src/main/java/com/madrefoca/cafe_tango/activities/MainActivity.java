@@ -6,6 +6,8 @@ import android.speech.RecognizerIntent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -22,6 +24,9 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.j256.ormlite.android.apptools.OpenHelperManager;
+import com.j256.ormlite.dao.Dao;
 import com.madrefoca.cafe_tango.helpers.DatabaseHelper;
 import com.madrefoca.cafe_tango.model.Illness;
 
@@ -40,7 +45,12 @@ public class MainActivity extends AppCompatActivity {
 
     List illnessesArrayList= new ArrayList();
 
+    // Declaration of DAOs to interact with corresponding table
+    private Dao<Illness, Integer> illnessDao;
+
     private final int REQ_CODE_SPEECH_INPUT = 100;
+
+    private DatabaseHelper databaseHelper = null;
 
 
     @Override
@@ -48,17 +58,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        DatabaseHelper db = new DatabaseHelper(this);
-
-        //clean all data
-        db.deleteAllIllnesses();
 
         //Insert some illnesses
-        this.insertSomeIllnesses(db);
+        // TODO: 8/19/2017 esto es temporal para mostrar datos, se tiene que mover a otro lado
+        this.insertSomeIllnesses(databaseHelper);
 
         // Reading all illnesses
-        Log.d("Reading: ", "Reading all illnesses..");
-        List<Illness> illnesses = db.getAllIllnesses();
+        Log.d("Reading: ", "Reading all illnesses from database...");
+        List<Illness> illnesses = getAllIllnessesFromDatabase();
 
         //put the illnesses in the view
         for (Illness illness : illnesses) {
@@ -68,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
             //Writing Illnesses to the view
             illnessesArrayList.add(illness.getName());
         }
-
 
         listView = (ListView) findViewById(R.id.list_view);
         inputSearch = (EditText) findViewById(R.id.inputSearch);
@@ -124,6 +130,14 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    // This is how, DatabaseHelper can be initialized for future use
+    private DatabaseHelper getHelper() {
+        if (databaseHelper == null) {
+            databaseHelper = OpenHelperManager.getHelper(this,DatabaseHelper.class);
+        }
+        return databaseHelper;
+    }
+
     /**
      * Showing google speech input dialog
      * */
@@ -166,13 +180,35 @@ public class MainActivity extends AppCompatActivity {
 
     private void insertSomeIllnesses(DatabaseHelper db) {
         Log.d("Insert: ", "Inserting ..");
-        db.addIllness(new Illness("Cáncer de piel", "otro tipo de cancer de piel"));
-        db.addIllness(new Illness("Cáncer de mama", "otro tipo de cancer de mama"));
-        db.addIllness(new Illness("Cáncer de próstata", "otro tipo de cancer de prostata"));
-        db.addIllness(new Illness("Cáncer de hígado", "mucho vino da este cancer"));
-        db.addIllness(new Illness("Cáncer de páncreas", "ese cancer que no se por que da"));
-        db.addIllness(new Illness("Cáncer de huesos", "un tipo de cancer jodido que quedas deforme"));
-        db.addIllness(new Illness("Resfrío", "resfrio normal dar aspirina"));
-        db.addIllness(new Illness("Migraña", "un dolor de cabeza jodido"));
+
+        try {
+            // This is how, a reference of DAO object can be done
+            final Dao<Illness, Integer> illnessDao = getHelper().getIllnesDao();
+
+            //This is the way to insert data into a database table
+            illnessDao.create(new Illness("Cáncer de piel", "otro tipo de cancer de piel"));
+            illnessDao.create(new Illness("Cáncer de mama", "otro tipo de cancer de mama"));
+            illnessDao.create(new Illness("Cáncer de próstata", "otro tipo de cancer de prostata"));
+            illnessDao.create(new Illness("Cáncer de hígado", "mucho vino da este cancer"));
+            illnessDao.create(new Illness("Cáncer de páncreas", "ese cancer que no se por que da"));
+            illnessDao.create(new Illness("Cáncer de huesos", "un tipo de cancer jodido que quedas deforme"));
+            illnessDao.create(new Illness("Resfrío", "resfrio normal dar aspirina"));
+            illnessDao.create(new Illness("Migraña", "un dolor de cabeza jodido"));
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private List<Illness> getAllIllnessesFromDatabase() {
+        List<Illness> illnessesList = null;
+        try {
+            // This is how, a reference of DAO object can be done
+            illnessesList = getHelper().getIllnesDao().queryForAll();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return illnessesList;
     }
 }
