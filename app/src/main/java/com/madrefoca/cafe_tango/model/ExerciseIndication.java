@@ -11,8 +11,8 @@ public class ExerciseIndication extends Indication {
     private String name;
     private long frequency;
 
-    public static final String COLON = ": ";
-    public static final String WEEKLY = " semanales.";
+    private static final String COLON = ": ";
+    private static final String WEEKLY = " semanales.";
 
     @Override
     public String indicate() {
