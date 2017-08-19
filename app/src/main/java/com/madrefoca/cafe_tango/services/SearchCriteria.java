@@ -1,6 +1,9 @@
 package com.madrefoca.cafe_tango.services;
 
 import com.madrefoca.cafe_tango.model.Illness;
+import com.madrefoca.cafe_tango.model.SchoolHouse;
+import com.madrefoca.cafe_tango.model.SubClasification;
+import com.madrefoca.cafe_tango.model.Treatment;
 
 import java.util.List;
 
