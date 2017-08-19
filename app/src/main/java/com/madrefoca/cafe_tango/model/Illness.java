@@ -1,13 +1,22 @@
 package com.madrefoca.cafe_tango.model;
 
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
+
 /**
  * Created by Fernando on 8/6/2017.
  */
-
+@DatabaseTable
 public class Illness {
-    private int id;
-    private String name;
-    private String description;
+
+    @DatabaseField(generatedId = true)
+    int id;
+
+    @DatabaseField
+    String name;
+
+    @DatabaseField
+    String description;
 
     public Illness(){
 
