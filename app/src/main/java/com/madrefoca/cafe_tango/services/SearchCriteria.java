@@ -2,7 +2,7 @@ package com.madrefoca.cafe_tango.services;
 
 import com.madrefoca.cafe_tango.model.Illness;
 import com.madrefoca.cafe_tango.model.SchoolHouse;
-import com.madrefoca.cafe_tango.model.SubClasification;
+import com.madrefoca.cafe_tango.model.SubClassification;
 import com.madrefoca.cafe_tango.model.Treatment;
 
 import java.util.List;
@@ -15,11 +15,11 @@ public class SearchCriteria {
 
     private List<Illness> illnesses;
     private List<SchoolHouse> schoolHouses;
-    private List<SubClasification> subClasifications;
+    private List<SubClassification> subClassifications;
 
     private Illness searchedIllness;
     private SchoolHouse searchedSchoolHouse;
-    private SubClasification searchedSubClasification;
+    private SubClassification searchedSubClassification;
 
     public Treatment search() {
         //TODO armar el search usando los atributos "searched..."
@@ -43,12 +43,12 @@ public class SearchCriteria {
         this.schoolHouses = schoolHouses;
     }
 
-    public List<SubClasification> getSubClasifications() {
-        return subClasifications;
+    public List<SubClassification> getSubClassifications() {
+        return subClassifications;
     }
 
-    public void setSubClasifications(List<SubClasification> subClasifications) {
-        this.subClasifications = subClasifications;
+    public void setSubClassifications(List<SubClassification> subClassifications) {
+        this.subClassifications = subClassifications;
     }
 
     public Illness getSearchedIllness() {
@@ -67,11 +67,11 @@ public class SearchCriteria {
         this.searchedSchoolHouse = searchedSchoolHouse;
     }
 
-    public SubClasification getSearchedSubClasification() {
-        return searchedSubClasification;
+    public SubClassification getSearchedSubClassification() {
+        return searchedSubClassification;
     }
 
-    public void setSearchedSubClasification(SubClasification searchedSubClasification) {
-        this.searchedSubClasification = searchedSubClasification;
+    public void setSearchedSubClassification(SubClassification searchedSubClassification) {
+        this.searchedSubClassification = searchedSubClassification;
     }
 }

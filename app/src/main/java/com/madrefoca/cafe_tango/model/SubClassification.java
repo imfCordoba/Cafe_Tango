@@ -4,15 +4,15 @@ package com.madrefoca.cafe_tango.model;
  * Created by Mauro on 17/08/2017.
  */
 
-public class SubClasification {
+public class SubClassification {
 
     private String name;
     private String description;
 
-    public SubClasification() {
+    public SubClassification() {
     }
 
-    public SubClasification(String name, String description) {
+    public SubClassification(String name, String description) {
         this.name = name;
         this.description = description;
     }
