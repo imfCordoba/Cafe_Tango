@@ -1,6 +1,5 @@
 package com.madrefoca.cafe_tango.helpers;
 
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -27,6 +26,11 @@ public class IndicationsHelperTest {
 
     @Test
     public void formatSeveralHours() throws Exception {
+        assertEquals("6 horas" , IndicationsHelper.formatTerm(21600000));
+    }
+
+    @Test
+    public void formatSeveralHoursBis() throws Exception {
         assertEquals("8 horas" , IndicationsHelper.formatTerm(28800000));
     }
 
@@ -38,6 +42,11 @@ public class IndicationsHelperTest {
     @Test
     public void formatSeveralMinutes() throws Exception {
         assertEquals("15 minutos" , IndicationsHelper.formatTerm(900000));
+    }
+
+    @Test
+    public void formatHourAndHalfAsMinutes() throws Exception {
+        assertEquals("90 minutos" , IndicationsHelper.formatTerm(5400000));
     }
 
     @Test
