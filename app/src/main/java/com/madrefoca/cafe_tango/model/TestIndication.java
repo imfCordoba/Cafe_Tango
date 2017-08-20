@@ -14,14 +14,7 @@ public class TestIndication extends Indication {
 
     @Override
     public String indicate() {
-        StringBuilder finalIndication = new StringBuilder();
-
-        finalIndication.append(name);
-        finalIndication.append(COLON);
-        finalIndication.append(indication);
-        finalIndication.append(PERIOD);
-
-        return finalIndication.toString();
+        return name + COLON + indication + PERIOD;
     }
 
     public void setName(String name) {

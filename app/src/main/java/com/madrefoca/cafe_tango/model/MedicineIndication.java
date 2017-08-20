@@ -7,8 +7,8 @@ package com.madrefoca.cafe_tango.model;
 public class MedicineIndication extends Indication {
 
     private int amount;
-    private double frequency;
-    private double period;
+    private long frequency;
+    private long period;
     private Medicine medicine;
 
     @Override
@@ -22,11 +22,11 @@ public class MedicineIndication extends Indication {
         this.amount = amount;
     }
 
-    public void setFrequency(double frequency) {
+    public void setFrequency(long frequency) {
         this.frequency = frequency;
     }
 
-    public void setPeriod(double period) {
+    public void setPeriod(long period) {
         this.period = period;
     }
 
