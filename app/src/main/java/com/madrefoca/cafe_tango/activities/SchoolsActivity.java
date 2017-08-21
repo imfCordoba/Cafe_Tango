@@ -8,25 +8,33 @@ import android.os.Bundle;
 import com.madrefoca.cafe_tango.adapters.SchoolsViewPagerAdapter;
 
 import com.madrefoca.cafe_tango.R;
+import com.madrefoca.cafe_tango.model.SchoolHouse;
+
+import java.util.ArrayList;
 
 public class SchoolsActivity extends AppCompatActivity {
 
     //Initializing the views and variables
     ViewPager viewPager;
     SchoolsViewPagerAdapter pagerAdapter;
-    CharSequence titles[] = {"Escuela 1", "Escuela 2", "Escuela 3"};
-    int numboftabs = 3;
+    CharSequence[] titles;
+    int numboftabs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schools);
 
-        Intent i = getIntent();
         // Receiving the Data
+        Intent i = getIntent();
         String illnessName = i.getStringExtra("IllnessName");
 
+        Bundle bundle = getIntent().getExtras();
+        ArrayList<SchoolHouse> schoolHousearraylist = bundle.getParcelableArrayList("schoolHouseList");
 
+        this.getTitlesFromSchoolHouseList(schoolHousearraylist);
+
+        numboftabs = schoolHousearraylist.size();
 
         // Creating The SchoolsViewPagerAdapter and Passing Fragment Manager, Titles fot the Tabs and Number Of Tabs.
         pagerAdapter = new SchoolsViewPagerAdapter(getSupportFragmentManager(), titles, numboftabs);
@@ -38,4 +46,12 @@ public class SchoolsActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         tabLayout.setupWithViewPager(viewPager);
     }
+     private void getTitlesFromSchoolHouseList( ArrayList<SchoolHouse> schoolHouseArraylist) {
+         int i = 0;
+         titles = new String[schoolHouseArraylist.size()];
+         for(SchoolHouse schoolHouse : schoolHouseArraylist){
+             titles[i] = schoolHouse.getName();
+             i++;
+         }
+     }
 }

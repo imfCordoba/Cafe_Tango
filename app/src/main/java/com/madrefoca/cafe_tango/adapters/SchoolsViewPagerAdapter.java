@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
+import com.madrefoca.cafe_tango.fragments.GenericSchoolTab;
 import com.madrefoca.cafe_tango.fragments.SchoolTab1;
 import com.madrefoca.cafe_tango.fragments.SchoolTab2;
 import com.madrefoca.cafe_tango.fragments.SchoolTab3;
@@ -18,11 +19,11 @@ public class SchoolsViewPagerAdapter extends FragmentStatePagerAdapter {
 
 
     // Build a Constructor and assign the passed Values to appropriate values in the class
-    public SchoolsViewPagerAdapter(FragmentManager fm, CharSequence mTitles[], int mNumbOfTabsumb) {
+    public SchoolsViewPagerAdapter(FragmentManager fm, CharSequence mTitles[], int numberOfTabs) {
         super(fm);
 
         this.titles = mTitles;
-        this.numbOfTabs = mNumbOfTabsumb;
+        this.numbOfTabs = numberOfTabs;
 
     }
 
@@ -37,10 +38,12 @@ public class SchoolsViewPagerAdapter extends FragmentStatePagerAdapter {
         } else if (position == 1) {
             SchoolTab2 tab2 = new SchoolTab2();
             return tab2;
-        } else             // As we are having 2 tabs if the position is now 0 it must be 1 so we are returning second tab
-        {
+        } else if (position == 2) {
             SchoolTab3 tab3 = new SchoolTab3();
             return tab3;
+        } else {
+            GenericSchoolTab genericSchoolTab = new GenericSchoolTab();
+            return genericSchoolTab;
         }
 
 
