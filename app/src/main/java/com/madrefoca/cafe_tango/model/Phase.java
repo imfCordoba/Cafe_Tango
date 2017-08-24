@@ -1,5 +1,7 @@
 package com.madrefoca.cafe_tango.model;
 
+import com.madrefoca.cafe_tango.model.Indications.Indication;
+
 import java.util.List;
 
 /**

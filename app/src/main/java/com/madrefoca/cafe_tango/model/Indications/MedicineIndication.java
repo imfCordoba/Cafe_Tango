@@ -1,4 +1,6 @@
-package com.madrefoca.cafe_tango.model;
+package com.madrefoca.cafe_tango.model.Indications;
+
+import com.madrefoca.cafe_tango.model.Medicine;
 
 /**
  * Created by iascierto on 10/8/17.

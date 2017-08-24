@@ -4,7 +4,6 @@ import com.madrefoca.cafe_tango.model.Illness;
 import com.madrefoca.cafe_tango.model.SchoolHouse;
 import com.madrefoca.cafe_tango.model.SubClassification;
 import com.madrefoca.cafe_tango.model.Treatment;
-
 import java.util.List;
 
 /**
@@ -22,7 +21,7 @@ public class SearchCriteria {
     private SubClassification searchedSubClassification;
 
     public Treatment search() {
-        //TODO armar el search usando los atributos "searched..."
+        //TODO armar el search usando los atributos "searched..." ya seteados antes desde el Main
 
         return null;
     }
