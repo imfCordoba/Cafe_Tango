@@ -1,4 +1,4 @@
-package com.madrefoca.cafe_tango.model;
+package com.madrefoca.cafe_tango.model.Indications;
 
 import com.madrefoca.cafe_tango.helpers.IndicationsHelper;
 
@@ -16,7 +16,8 @@ public class ExerciseIndication extends Indication {
 
     @Override
     public String indicate() {
-        //TODO revisar si queremos indicar ejericio de manera semanal u otra
+        //TODO revisar si queremos indicar ejericio de manera semanal u otra.
+        //TODO Ejemplo: "Natación: 3 horas semanales."
 
         return name + COLON + IndicationsHelper.formatTerm(frequency) + WEEKLY;
     }

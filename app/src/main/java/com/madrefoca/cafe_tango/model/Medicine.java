@@ -4,7 +4,7 @@ package com.madrefoca.cafe_tango.model;
  * Created by iascierto on 10/8/17.
  */
 
-class Medicine {
+public class Medicine {
 
     private String tradeName;
     private String drugName;

@@ -1,7 +1,6 @@
 package com.madrefoca.cafe_tango.helpers;
 
 import org.junit.Test;
-
 import static org.junit.Assert.*;
 
 /**
