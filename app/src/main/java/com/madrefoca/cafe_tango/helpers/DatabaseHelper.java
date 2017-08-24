@@ -10,6 +10,7 @@ import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
 import com.madrefoca.cafe_tango.R;
 import com.madrefoca.cafe_tango.model.Illness;
+import com.madrefoca.cafe_tango.model.SchoolHouse;
 
 import java.sql.SQLException;
 
@@ -20,9 +21,10 @@ import java.sql.SQLException;
 public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 
     private static final String DATABASE_NAME = "CafeTango.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 4;
 
     private Dao<Illness, Integer> illnessDao;
+    private Dao<SchoolHouse, Integer> schoolHouseDao;
     //lo mismo para cada clase/tabla del modelo
 
     public DatabaseHelper(Context context) {
@@ -45,6 +47,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     public void onCreate(SQLiteDatabase sqliteDatabase, ConnectionSource connectionSource) {
         try {
             TableUtils.createTable(connectionSource, Illness.class);
+            TableUtils.createTable(connectionSource, SchoolHouse.class);
             // TODO: 8/19/2017 lo mismo para los dao de las otras clases
         } catch (SQLException e) {
             Log.e(DatabaseHelper.class.getName(), "Unable to create datbases", e);
@@ -69,6 +72,8 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     public void onUpgrade(SQLiteDatabase sqliteDatabase, ConnectionSource connectionSource, int oldVersion, int newVersion) {
         try {
             TableUtils.dropTable(connectionSource, Illness.class, true);
+            TableUtils.dropTable(connectionSource, SchoolHouse.class, true);
+
             // TODO: 8/19/2017 lo mismo para los dao de las otras clases
 
             onCreate(sqliteDatabase, connectionSource);
@@ -78,11 +83,28 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
         }
     }
 
+    public void clearTables() {
+        try {
+            TableUtils.clearTable(connectionSource, Illness.class);
+            TableUtils.clearTable(connectionSource, SchoolHouse.class);
+            // TODO: 8/19/2017 lo mismo para los dao de las otras clases
+        } catch (SQLException e) {
+            Log.e(DatabaseHelper.class.getName(), "Unable to clear tables", e);
+        }
+    }
+
     public Dao<Illness, Integer> getIllnesDao() throws SQLException {
         if (illnessDao == null) {
             illnessDao = getDao(Illness.class);
         }
         return illnessDao;
+    }
+
+    public Dao<SchoolHouse, Integer> getSchoolHouseDao() throws SQLException {
+        if (schoolHouseDao == null) {
+            schoolHouseDao = getDao(SchoolHouse.class);
+        }
+        return schoolHouseDao;
     }
     //// TODO: 8/19/2017  el mismo metodo get para cada clase/tabla del modelo
 }

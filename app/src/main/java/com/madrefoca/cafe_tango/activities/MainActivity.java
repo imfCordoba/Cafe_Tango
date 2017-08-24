@@ -9,7 +9,6 @@ import android.os.Bundle;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
@@ -20,9 +19,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.j256.ormlite.android.apptools.OpenHelperManager;
@@ -31,6 +28,7 @@ import com.madrefoca.cafe_tango.helpers.DatabaseHelper;
 import com.madrefoca.cafe_tango.model.Illness;
 
 import com.madrefoca.cafe_tango.R;
+import com.madrefoca.cafe_tango.model.SchoolHouse;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -58,10 +56,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //clear tables because is duplicated.
+        // TODO: 8/21/2017 buscar otra forma para que no se dupliquen los datos.
+        this.getHelper().clearTables();
+
 
         //Insert some illnesses
         // TODO: 8/19/2017 esto es temporal para mostrar datos, se tiene que mover a otro lado
-        this.insertSomeIllnesses(databaseHelper);
+        this.insertSomeIllnesses();
+
+        //Create some schools in db to create tabs depending in this table.
+        this.insertSchools();
 
         // Reading all illnesses
         Log.d("Reading: ", "Reading all illnesses from database...");
@@ -88,6 +93,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(MainActivity.this, SchoolsActivity.class);
+                Bundle bundle = new Bundle();
+                //pass to school activity all schools in db to create tabs
+                bundle.putParcelableArrayList("schoolHouseList", getAllSchoolHouseFromDatabase());
+                intent.putExtras(bundle);
                 intent.putExtra("IllnessName", listView.getItemAtPosition(i).toString());
                 startActivity(intent);
             }
@@ -178,7 +187,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void insertSomeIllnesses(DatabaseHelper db) {
+    private void insertSomeIllnesses() {
         Log.d("Insert: ", "Inserting ..");
 
         try {
@@ -200,6 +209,24 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private void insertSchools() {
+        Log.d("Insert: ", "Inserting some schools");
+
+        try {
+            // This is how, a reference of DAO object can be done
+            final Dao<SchoolHouse, Integer> schoolsHouseDao = getHelper().getSchoolHouseDao();
+
+            //This is the way to insert data into a database table
+            schoolsHouseDao.create(new SchoolHouse("Escuela 1", "tab para la escuela 1"));
+            schoolsHouseDao.create(new SchoolHouse("Escuela 2", "tab para la escuela 2"));
+            schoolsHouseDao.create(new SchoolHouse("Escuela 3", "tab para la escuela 3"));
+            schoolsHouseDao.create(new SchoolHouse("Escuela 4", "tab para la escuela 4"));
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     private List<Illness> getAllIllnessesFromDatabase() {
         List<Illness> illnessesList = null;
         try {
@@ -210,5 +237,17 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return illnessesList;
+    }
+
+    private ArrayList<SchoolHouse> getAllSchoolHouseFromDatabase() {
+        ArrayList<SchoolHouse> schoolHouseList = new  ArrayList<SchoolHouse>();
+        try {
+            // This is how, a reference of DAO object can be done
+            schoolHouseList.addAll(getHelper().getSchoolHouseDao().queryForAll());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return schoolHouseList;
     }
 }
