@@ -6,47 +6,46 @@ import com.j256.ormlite.table.DatabaseTable;
 /**
  * Created by Fernando on 8/6/2017.
  */
-@DatabaseTable
+@DatabaseTable(tableName = "Illnesses")
 public class Illness {
 
     @DatabaseField(generatedId = true)
-    int id;
+    int illnessId;
 
     @DatabaseField
-    String name;
+    private String illnessName;
 
     @DatabaseField
-    String description;
+    private String description;
 
     public Illness(){
 
     }
 
-    public Illness(int id, String name, String description){
-        this.id = id;
-        this.name = name;
+    public int getIllnessId() {
+        return illnessId;
+    }
+
+    public void setIllnessId(int illnessId) {
+        this.illnessId = illnessId;
+    }
+
+    public Illness(int illnessId, String name, String description){
+        this.illnessName = name;
         this.description = description;
     }
 
     public Illness(String name, String description){
-        this.name = name;
+        this.illnessName = name;
         this.description = description;
     }
 
-    public int getId() {
-        return id;
+    public String getIllnessName() {
+        return illnessName;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public void setIllnessName(String name) {
+        this.illnessName = name;
     }
 
     public String getDescription() {

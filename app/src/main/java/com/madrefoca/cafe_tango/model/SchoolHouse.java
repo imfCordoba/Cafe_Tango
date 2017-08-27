@@ -14,10 +14,10 @@ import com.j256.ormlite.table.DatabaseTable;
 public class SchoolHouse implements Parcelable {
 
     @DatabaseField(generatedId = true)
-    int id;
+    int schoolHouseId;
 
     @DatabaseField
-    private String name;
+    private String schoolName;
 
     @DatabaseField
     private String description;
@@ -25,27 +25,28 @@ public class SchoolHouse implements Parcelable {
     public SchoolHouse() {
     }
 
+    public int getSchoolHouseId() {
+        return schoolHouseId;
+    }
+
+    public void setSchoolHouseId(int schoolHouseId) {
+        this.schoolHouseId = schoolHouseId;
+    }
+
     public SchoolHouse(String name, String description) {
-        this.name = name;
+        this.schoolName = name;
         this.description = description;
     }
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    public String getSchoolName() {
 
-    public String getName() {
-
-        return name;
+        return schoolName;
     }
 
     public void setName(String name) {
 
-        this.name = name;
+        this.schoolName = name;
     }
 
     public String getDescription() {
@@ -83,14 +84,12 @@ public class SchoolHouse implements Parcelable {
      */
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(id);
-        dest.writeString(name);
+        dest.writeString(schoolName);
         dest.writeString(description);
     }
 
     public SchoolHouse(Parcel in) {
-        id = in.readInt();
-        name = in.readString();
+        schoolName = in.readString();
         description = in.readString();
     }
 
