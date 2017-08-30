@@ -27,7 +27,6 @@ public class SchoolsActivity extends AppCompatActivity {
 
         // Receiving the Data
         Intent i = getIntent();
-        String illnessName = i.getStringExtra("IllnessName");
 
         Bundle bundle = getIntent().getExtras();
         ArrayList<SchoolHouse> schoolHousearraylist = bundle.getParcelableArrayList("schoolHouseList");
@@ -50,7 +49,7 @@ public class SchoolsActivity extends AppCompatActivity {
          int i = 0;
          titles = new String[schoolHouseArraylist.size()];
          for(SchoolHouse schoolHouse : schoolHouseArraylist){
-             titles[i] = schoolHouse.getName();
+             titles[i] = schoolHouse.getSchoolName();
              i++;
          }
      }
