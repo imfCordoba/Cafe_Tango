@@ -9,14 +9,14 @@ import com.j256.ormlite.table.DatabaseTable;
 @DatabaseTable(tableName = "Illnesses_SchoolHouses")
 public class IllnessesSchoolHouses {
 
-    @DatabaseField(generatedId = true, columnName = "Illnesses_schoolHouseId")
-    private Integer id;
+    @DatabaseField(generatedId = true, columnName = "Illnesses_SchoolHousesId")
+    private Integer illnessesSchoolHousesId;
 
-    // This is a foreign object which just stores the id from the Illness object in this table.
+    // This is a foreign object which just stores the IllnessesSchoolHousesId from the Illness object in this table.
     @DatabaseField(foreign = true, columnName = "illnessId")
     private Illness illness;
 
-    // This is a foreign object which just stores the id from the SchoolHouse object in this table.
+    // This is a foreign object which just stores the IllnessesSchoolHousesId from the SchoolHouse object in this table.
     @DatabaseField(foreign = true, columnName = "schoolHouseId")
     private SchoolHouse schoolHouse;
 
@@ -29,12 +29,12 @@ public class IllnessesSchoolHouses {
         this.schoolHouse = schoolHouse;
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getiIllnessesSchoolHousesId() {
+        return illnessesSchoolHousesId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setIllnessesSchoolHousesId(Integer illnessesSchoolHousesId) {
+        this.illnessesSchoolHousesId = illnessesSchoolHousesId;
     }
 
     public Illness getIllness() {

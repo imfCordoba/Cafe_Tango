@@ -1,49 +1,14 @@
 package com.madrefoca.cafe_tango.model;
 
-import com.madrefoca.cafe_tango.model.Indications.Indication;
-
-import java.util.List;
+import com.j256.ormlite.field.DatabaseField;
 
 /**
  * Created by Mauro on 17/08/2017.
  */
 
-public class Phase {
+public enum PhasesEnum {
 
-    private PhasesEnum phase;
-    private String description;
-    private List<Indication> indications;
-
-    public Phase() {
-    }
-
-    public Phase(PhasesEnum phase, String description, List<Indication> indications) {
-        this.phase = phase;
-        this.description = description;
-        this.indications = indications;
-    }
-
-    public PhasesEnum getPhase() {
-        return phase;
-    }
-
-    public void setPhase(PhasesEnum phase) {
-        this.phase = phase;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public List<Indication> getIndications() {
-        return indications;
-    }
-
-    public void setIndications(List<Indication> indications) {
-        this.indications = indications;
-    }
+    INITIAL,
+    MONITOR,
+    CONTROL;
 }
