@@ -1,22 +1,32 @@
 package com.madrefoca.cafe_tango.model;
 
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
+import com.madrefoca.cafe_tango.model.Indications.Indication;
+
 import java.util.List;
 
 /**
  * Created by Mauro on 17/08/2017.
  */
 
+@DatabaseTable(tableName = "Treatments")
 public class Treatment {
 
+    @DatabaseField(generatedId = true)
+        private Integer treatmentId;
+
+    @DatabaseField
     private String name;
-    private List<Phase> phases;
+
+    @DatabaseField
+    private String description;
 
     public Treatment() {
     }
 
-    public Treatment(String name, List phases) {
-        this.name = name;
-        this.phases = phases;
+    public Integer getTreatmentId() {
+        return treatmentId;
     }
 
     public String getName() {
@@ -27,11 +37,11 @@ public class Treatment {
         this.name = name;
     }
 
-    public List<Phase> getPhases() {
-        return phases;
+    public String getDescription() {
+        return description;
     }
 
-    public void setPhases(List<Phase> phases) {
-        this.phases = phases;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

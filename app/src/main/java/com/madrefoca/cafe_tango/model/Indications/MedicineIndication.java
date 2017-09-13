@@ -11,7 +11,6 @@ public class MedicineIndication extends Indication {
     private int amount;
     private long frequency;
     private long period;
-    private Medicine medicine;
 
     @Override
     public String indicate() {
@@ -30,13 +29,5 @@ public class MedicineIndication extends Indication {
 
     public void setPeriod(long period) {
         this.period = period;
-    }
-
-    public void setMedicine(Medicine medicine) {
-        this.medicine = medicine;
-    }
-
-    public Medicine getMedicine() {
-        return medicine;
     }
 }

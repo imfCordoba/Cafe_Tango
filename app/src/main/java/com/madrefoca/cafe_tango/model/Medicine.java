@@ -1,20 +1,52 @@
 package com.madrefoca.cafe_tango.model;
 
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
+
 /**
  * Created by iascierto on 10/8/17.
  */
 
+@DatabaseTable(tableName = "Medicines")
 public class Medicine {
 
+    @DatabaseField(generatedId = true)
+    private Integer medicineId;
+
+    @DatabaseField
     private String tradeName;
+
+    @DatabaseField
     private String drugName;
+
+    @DatabaseField
     private String pharmacology;
+
+    @DatabaseField
     private String presentation;
+
+    @DatabaseField
     private String concentration;
+
+    @DatabaseField
     private String indications;
+
+    @DatabaseField
     private String contraindications;
+
+    @DatabaseField
     private String preservation;
+
+    @DatabaseField
     private String interactions;
+
+    public Medicine() {
+
+    }
+
+    public Integer getMedicineId() {
+        return medicineId;
+    }
 
     public String getTradeName() {
         return tradeName;
