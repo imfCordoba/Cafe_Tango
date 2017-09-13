@@ -10,11 +10,11 @@ import com.j256.ormlite.table.DatabaseTable;
  * Created by Mauro on 17/08/2017.
  */
 
-@DatabaseTable
+@DatabaseTable(tableName = "SchoolHouse")
 public class SchoolHouse implements Parcelable {
 
     @DatabaseField(generatedId = true)
-    int schoolHouseId;
+    private Integer schoolHouseId;
 
     @DatabaseField
     private String schoolName;
@@ -38,6 +38,9 @@ public class SchoolHouse implements Parcelable {
         this.description = description;
     }
 
+    public void setSchoolHouseId(Integer schoolHouseId) {
+        this.schoolHouseId = schoolHouseId;
+    }
 
     public String getSchoolName() {
 

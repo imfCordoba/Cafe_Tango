@@ -4,7 +4,7 @@ import android.util.Log;
 import com.j256.ormlite.dao.Dao;
 import com.madrefoca.cafe_tango.helpers.DatabaseHelper;
 import com.madrefoca.cafe_tango.model.Illness;
-import com.madrefoca.cafe_tango.model.IllnessesSchoolHouses;
+import com.madrefoca.cafe_tango.model.IllnessSchoolHouse;
 import com.madrefoca.cafe_tango.model.SchoolHouse;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -96,14 +96,14 @@ public class DatabasePopulatorUtil {
 
         try {
             final Dao<SchoolHouse, Integer> schoolsHouseDao = databaseHelper.getSchoolHouseDao();
-            final Dao<IllnessesSchoolHouses, Integer> illnessesSchoolHousesDao = databaseHelper.getIllnessesSchoolHousesDao();
+            final Dao<IllnessSchoolHouse, Integer> illnessesSchoolHousesDao = databaseHelper.getIllnessesSchoolHousesDao();
             for(SchoolHouse schoolHouse: schoolHouseArrayList){
                 schoolsHouseDao.create(schoolHouse);
                 String log = "SchoolHouse " + schoolHouse.getSchoolName() + ", saved in database. " ;
                 // Writing Illness to log
                 Log.d("DatabasePopulatorUtil: ", log);
-                IllnessesSchoolHouses illnessesSchoolHouses = new IllnessesSchoolHouses(illness, schoolHouse);
-                illnessesSchoolHousesDao.create(illnessesSchoolHouses);
+                IllnessSchoolHouse illnessSchoolHouse = new IllnessSchoolHouse(illness, schoolHouse);
+                illnessesSchoolHousesDao.create(illnessSchoolHouse);
                 log = "SchoolHouse " + schoolHouse.getSchoolName() + ", linked to Illness: " + illness.getIllnessName() ;
                 // Writing Illness to log
                 Log.d("DatabasePopulatorUtil: ", log);

@@ -6,7 +6,7 @@
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/genericText"
+        android:illnessesSchoolHousesId="@+illnessesSchoolHousesId/genericText"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="@string/generic_schoolHouse_fragment" />

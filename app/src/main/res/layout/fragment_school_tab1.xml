@@ -14,7 +14,7 @@
         android:paddingRight="15dp">
 
         <Button
-            android:id="@+id/button1"
+            android:illnessesSchoolHousesId="@+illnessesSchoolHousesId/button1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
@@ -26,7 +26,7 @@
 
 
         <Button
-            android:id="@+id/button2"
+            android:illnessesSchoolHousesId="@+illnessesSchoolHousesId/button2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
@@ -37,7 +37,7 @@
             android:textColor="@android:color/background_light" />
 
         <Button
-            android:id="@+id/button3"
+            android:illnessesSchoolHousesId="@+illnessesSchoolHousesId/button3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"

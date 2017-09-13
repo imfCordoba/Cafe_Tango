@@ -7,7 +7,7 @@ import com.j256.ormlite.table.DatabaseTable;
  * Created by fernando on 26/08/17.
  */
 @DatabaseTable(tableName = "Illnesses_SchoolHouses")
-public class IllnessesSchoolHouses {
+public class IllnessSchoolHouse {
 
     @DatabaseField(generatedId = true, columnName = "Illnesses_SchoolHousesId")
     private Integer illnessesSchoolHousesId;
@@ -20,11 +20,11 @@ public class IllnessesSchoolHouses {
     @DatabaseField(foreign = true, columnName = "schoolHouseId")
     private SchoolHouse schoolHouse;
 
-    public IllnessesSchoolHouses() {
+    public IllnessSchoolHouse() {
 
     }
 
-    public IllnessesSchoolHouses(Illness illness, SchoolHouse schoolHouse) {
+    public IllnessSchoolHouse(Illness illness, SchoolHouse schoolHouse) {
         this.illness = illness;
         this.schoolHouse = schoolHouse;
     }

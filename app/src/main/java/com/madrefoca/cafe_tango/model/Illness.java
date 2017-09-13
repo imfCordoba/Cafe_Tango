@@ -10,7 +10,7 @@ import com.j256.ormlite.table.DatabaseTable;
 public class Illness {
 
     @DatabaseField(generatedId = true)
-    int illnessId;
+    private Integer illnessId;
 
     @DatabaseField
     private String illnessName;
@@ -18,24 +18,24 @@ public class Illness {
     @DatabaseField
     private String description;
 
-    public Illness(){
+    public Illness() {
 
     }
 
-    public int getIllnessId() {
+    public Integer getIllnessId() {
         return illnessId;
     }
 
-    public void setIllnessId(int illnessId) {
+    public void setIllnessId(Integer illnessId) {
         this.illnessId = illnessId;
     }
 
-    public Illness(int illnessId, String name, String description){
+    public Illness(int illnessId, String name, String description) {
         this.illnessName = name;
         this.description = description;
     }
 
-    public Illness(String name, String description){
+    public Illness(String name, String description) {
         this.illnessName = name;
         this.description = description;
     }

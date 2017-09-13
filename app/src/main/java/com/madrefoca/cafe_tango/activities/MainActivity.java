@@ -32,7 +32,7 @@ import com.madrefoca.cafe_tango.helpers.DatabaseHelper;
 import com.madrefoca.cafe_tango.model.Illness;
 
 import com.madrefoca.cafe_tango.R;
-import com.madrefoca.cafe_tango.model.IllnessesSchoolHouses;
+import com.madrefoca.cafe_tango.model.IllnessSchoolHouse;
 import com.madrefoca.cafe_tango.model.SchoolHouse;
 
 public class MainActivity extends AppCompatActivity {
@@ -245,9 +245,9 @@ public class MainActivity extends AppCompatActivity {
      * Build our query for Post objects that match a User.
      */
     private PreparedQuery<SchoolHouse> makeSchoolsForIllnessQuery() throws SQLException {
-        // build our inner query for IllnessesSchoolHouses objects
-        Dao<IllnessesSchoolHouses, Integer> illnessesSchoolsHouseDao = getHelper().getIllnessesSchoolHousesDao();
-        QueryBuilder<IllnessesSchoolHouses, Integer> illnessesSchoolsHouseQb = illnessesSchoolsHouseDao.queryBuilder();
+        // build our inner query for IllnessSchoolHouse objects
+        Dao<IllnessSchoolHouse, Integer> illnessesSchoolsHouseDao = getHelper().getIllnessesSchoolHousesDao();
+        QueryBuilder<IllnessSchoolHouse, Integer> illnessesSchoolsHouseQb = illnessesSchoolsHouseDao.queryBuilder();
         // just select the schoolName field
         illnessesSchoolsHouseQb.selectColumns("schoolHouseId");
         SelectArg illnessSelectArg = new SelectArg();

@@ -1,20 +1,40 @@
 package com.madrefoca.cafe_tango.model;
 
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
+
 /**
  * Created by Mauro on 17/08/2017.
  */
-
+@DatabaseTable(tableName = "SubClassifications")
 public class SubClassification {
 
+    @DatabaseField(generatedId = true)
+    private Integer subClassificationId;
+
+    @DatabaseField(foreign = true, columnName = "schoolHouseId")
+    private SchoolHouse schoolHouse;
+
+    @DatabaseField
     private String name;
-    private String description;
 
     public SubClassification() {
     }
 
-    public SubClassification(String name, String description) {
-        this.name = name;
-        this.description = description;
+    public Integer getSubClassificationId() {
+        return subClassificationId;
+    }
+
+    public void setSubClassificationId(Integer subClassificationId) {
+        this.subClassificationId = subClassificationId;
+    }
+
+    public SchoolHouse getSchoolHouse() {
+        return schoolHouse;
+    }
+
+    public void setSchoolHouse(SchoolHouse schoolHouse) {
+        this.schoolHouse = schoolHouse;
     }
 
     public String getName() {
@@ -23,13 +43,5 @@ public class SubClassification {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 }

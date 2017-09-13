@@ -1,12 +1,12 @@
 package com.madrefoca.cafe_tango.model;
 
-import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
 
 /**
  * Created by Mauro on 17/08/2017.
  */
-
-public enum PhasesEnum {
+@DatabaseTable
+public enum Phase {
 
     INITIAL,
     MONITOR,
